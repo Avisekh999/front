@@ -1,0 +1,408 @@
+main{
+  min-height:80vh;
+}
+
+h3{
+  padding: 1rem 0;
+}
+
+h1{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 900;
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    color: black;
+    border: 1px solid #e95420;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;;
+}
+
+h2{
+  font-size:1.4rem;
+  padding:0.5rem 0;
+}
+.rating span {
+  margin: 0.1rem;
+}
+footer{
+  background-color: black;
+}
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+/* 
+form{
+  margin-left: 100px;
+} */
+
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.footer-section {
+background: #000000;
+position: relative;
+}
+.footer-cta {
+border-bottom: 1px solid #000000;
+}
+.single-cta i {
+color: #333366;
+font-size: 20px;
+float: left;
+margin-top: 8px;
+}
+.cta-text {
+padding-left: 15px;
+display: inline-block;
+}
+.cta-text h4 {
+color: wheat;
+font-size: 20px;
+font-weight: 600;
+margin-bottom: 2px;
+}
+.cta-text span {
+color: #757575;
+font-size: 15px;
+}
+.footer-content {
+position: relative;
+z-index: 2;
+}
+.footer-pattern img {
+position: absolute;
+top: 0;
+left: 0;
+height: 330px;
+background-size: cover;
+background-position: 100% 100%;
+}
+.footer-logo {
+margin-bottom: 30px;
+}
+.footer-logo img {
+  max-width: 200px;
+}
+.footer-text p {
+margin-bottom: 14px;
+font-size: 14px;
+    color: #7e7e7e;
+line-height: 28px;
+}
+.footer-social-icon span {
+color: wheat;
+display: block;
+font-size: 20px;
+font-weight: 700;
+font-family: 'Poppins', sans-serif;
+margin-bottom: 20px;
+}
+.footer-social-icon a {
+color: wheat;
+font-size: 16px;
+margin-right: 15px;
+}
+.footer-social-icon i {
+height: 40px;
+width: 40px;
+text-align: center;
+line-height: 38px;
+border-radius: 50%;
+}
+.facebook-bg{
+background: #3B5998;
+}
+.twitter-bg{
+background: #55ACEE;
+}
+.google-bg{
+background: #333366;
+}
+.footer-widget-heading h3 {
+color: wheat;
+font-size: 20px;
+font-weight: 600;
+margin-bottom: 40px;
+position: relative;
+}
+.footer-widget-heading h3::before {
+content: "";
+position: absolute;
+left: 0;
+bottom: -15px;
+height: 2px;
+width: 50px;
+background: #333366;
+}
+.footer-widget ul li {
+display: inline-block;
+flex:auto;
+width: 50%;
+margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+color: #333366;
+}
+.footer-widget ul li a {
+color: #878787;
+text-transform: capitalize;
+}
+.subscribe-form {
+position: relative;
+overflow: hidden;
+}
+.subscribe-form input {
+width: 100%;
+padding: 14px 28px;
+background: #2E2E2E;
+border: 1px solid #2E2E2E;
+color: wheat;
+}
+.subscribe-form button {
+  position: absolute;
+  right: 0;
+  background: #333366;
+  padding: 13px 20px;
+  border: 1px solid #ff5e14;
+  top: 0;
+}
+.subscribe-form button i {
+color: wheat;
+font-size: 22px;
+transform: rotate(-6deg);
+}
+.copyright-area{
+background: #202020;
+padding: 25px 0;
+}
+.copyright-text p {
+margin: 0;
+font-size: 14px;
+color: #878787;
+}
+.copyright-text p a{
+color: #333366;
+}
+.footer-menu li {
+display: inline-block;
+margin-left: 20px;
+}
+.footer-menu li:hover a{
+color: #333366;
+}
+.footer-menu li a {
+font-size: 14px;
+color: #878787;
+}
+
+.container1{
+  margin-left: 70px;
+}
+
+.badge{
+  background-color: #f30e0e;
+  color: white;
+  border-radius: 100%;
+  padding: 0.2rem 0.7rem;
+  font-size: 0.5rem;
+  /* margin-left: 0.2rem; */
+}
+
+
+.checkout-steps > div{
+  border-top: 0.3rem #c0c0c0 solid;
+  color: #c0c0c0;
+  flex: 1;
+  padding: 1 rem;
+  font-weight: bold;
+}
+
+.checkout-steps > div.active {
+  border-top-color: #f08000;
+  color: #f08000;
+}
+
+
+.react-multiple-carousel__arrow {
+  position: absolute;
+  outline: 0;
+  transition: all .5s;
+  border-radius: 35px;
+  z-index: 1000;
+  border: 0;
+  background: rgba(0,0,0,0.5);
+  min-width: 43px;
+  min-height: 43px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+.column1 {
+  float: left;
+  width: 25%;
+  box-shadow: none;
+  
+  
+  /* padding: 0 10px; */
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column1 {
+    width: 50%;
+    display: block;
+    /* margin-bottom: 20px; */
+    padding: 0%;
+    border-radius: 0;
+
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* padding: 16px; */
+  text-align: left;
+  background-color: #ffffff;
+}
+
+p {
+  text-align: center;
+  
+  margin-top: 0px;
+}
+.demo{
+  font-size: 30px;
+}
+.img{
+  width: 91%;
+  margin: auto;
+  
+} 
+
+.img1{
+  width: 100%;
+  object-fit: cover;
+  
+} 
+.img4{
+  object-fit: cover;
+  height: 26vh;
+}
+
+/* contact */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Style the container/contact section */
+.container2 {
+  border-radius: 5px;
+  background-color: #f2f2f200;
+  padding: 10px;
+}
+
+/* Create two columns that float next to eachother */
+.column10 {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column10, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+
+/* cete */
+.column4{
+  float: left;
+  width: 50%;
+  padding: 0 10px;
+  margin-top: 40px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column4 {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card4 {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ height: 35vh;
+  text-align: center;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+
+}
+
+.img5{
+  width:100%;
+  height: auto;
+}

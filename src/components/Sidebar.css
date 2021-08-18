@@ -1,0 +1,43 @@
+.slide123{
+    position: relative;
+    /* width:50px ; */
+    height: 100%;
+    transition: .5s;
+}
+
+.slide123 ul {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.slide123ul li{
+    display: none;
+    padding: 20px;
+    transition: .5s;
+    cursor: pointer;
+    text-align: center;
+} 
+
+.slide123 ul li {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    
+}
+
+.slide123 li a{
+    color: whitesmoke;
+    z-index: 2;
+    font-size: 1.2em;
+    letter-spacing: 3px;
+}
+
+.slide li a i{
+    
+}
