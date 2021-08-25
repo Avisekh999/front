@@ -1,15 +1,10 @@
 import React from 'react';
 import { a } from "react-router-bootstrap";
 
-
-
-
-
-
 const Offer = () => {
     return (
         <>
-      <div class="row">
+      <div id="offers" class="row">
   <div class="column1">
     <div class="card">
       <a href="/product/6113d034d8136141a02d9b46">
@@ -17,8 +12,6 @@ const Offer = () => {
      <p>Gia Green Tea Lemon + honey</p>
      <p><b>₹189</b> <del>₹200</del> <ins>40%off</ins></p>
      </a>
-     
-
     </div>
   </div>
 

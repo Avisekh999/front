@@ -9,7 +9,7 @@ import {
 
 
 
-export const mailTo = () => async (dispatch) => {
+export const mailTo = (orderId) => async (dispatch) => {
     try {
         dispatch({
             type:MAIL_REQUEST
@@ -21,7 +21,7 @@ export const mailTo = () => async (dispatch) => {
             }
         }
 
-        const{data} = await axios.post('/api/mails',config)
+        const{data} = await axios.post(`/api/mails/${orderId}`,config)
 
         dispatch({
             type:MAIL_SUCCESS,

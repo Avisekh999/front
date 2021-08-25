@@ -63,6 +63,7 @@ const ProductListScreen = ({ history, match }) => {
   
   return (
     <>
+   
       <Row className="align-items-center">
         <Col>
           <h1>Products</h1>
@@ -72,6 +73,12 @@ const ProductListScreen = ({ history, match }) => {
             <i className="fas fa-plus"></i>Create Product
           </Button>
         </Col>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
       </Row>
       {loadingDelete && <Loader />}
       {errorDelete && <Message variant="danger">{errorDelete}</Message>}

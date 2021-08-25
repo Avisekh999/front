@@ -30,7 +30,7 @@ const PlaceOrderScreen = ({history}) => {
       0
     ))
 
-    cart.shippingPrice = addDecimals(cart.itemsPrice > 1000 ? 0 : 100)
+    // cart.shippingPrice = addDecimals(cart.itemsPrice > 1000 ? 0 : 100)
 
     // cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice).toFixed(2)))
 
@@ -55,7 +55,7 @@ const PlaceOrderScreen = ({history}) => {
       return Number(discountNumber).toFixed(2)
 
     }
-    let discount = (cart.totalPrice >= 500 ) && totalDiscount(cart.totalPrice) ;
+    let discount = (cart.totalPrice >= 500 ) && totalDiscount(cart.totalPrice)  ;
 
     useEffect(() => {
       if(success) {
@@ -63,7 +63,7 @@ const PlaceOrderScreen = ({history}) => {
         dispatch({ type: CART_RESET_ITEM });
         dispatch({ type: USER_DETAILS_RESET });
         dispatch({ type: ORDER_CREATE_RESET });
-        dispatch(mailTo())
+        dispatch(mailTo(order._id))
       }
       //eslint-disable-next-line
     },[history,success])
@@ -155,18 +155,13 @@ const PlaceOrderScreen = ({history}) => {
                     <Col>₹{cart.itemsPrice}</Col>
                   </Row>
                 </ListGroup.Item>
+               
                 <ListGroup.Item>
                   <Row>
-                    <Col>Shipping</Col>
-                    <Col>₹{cart.shippingPrice}</Col>
-                  </Row>
-                </ListGroup.Item>
-                <ListGroup.Item>
-                  <Row>
-                    <Col>Discount</Col>
+                    <Col>Packing Charge</Col>
                     
 
-                    <Col>₹{discount}</Col>
+                    <Col>2%</Col>
                   </Row>
                 </ListGroup.Item>
                
@@ -175,7 +170,7 @@ const PlaceOrderScreen = ({history}) => {
                   <Row>
                     <Col>Cart Total</Col>
                     
-                    <Col>₹{cart.totalPrice - discount}</Col>
+                    <Col>₹{(cart.totalPrice - discount) +((cart.totalPrice - discount) * 0.02)}</Col>
                   </Row>
                 </ListGroup.Item>
                

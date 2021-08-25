@@ -39,7 +39,7 @@ const Category = () => {
           
           
             <LinkContainer to="/category/food/60d184e192207a1a70f84489">
-            <Nav.Link> Food & Food Grains</Nav.Link>
+            <Nav.Link> Food & more</Nav.Link>
             </LinkContainer>
           
        

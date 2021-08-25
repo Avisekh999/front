@@ -23,10 +23,13 @@ import {
 } from "../constants/orderConstants";
 
 import axios from "axios";
+import {mailTo } from "../actions/mailActions"
+
 
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id;
-  console.log(orderId)
+  console.log("ORDER_ID:", match.params.id);
+  console.log("OrderID: ",orderId)
 
   const [products, setProduts] = useState([]);
   const [payment, setPayment] = useState(false);
@@ -50,7 +53,7 @@ const OrderScreen = ({ match, history }) => {
 
   const [value, setValues] = useState([]);
 
-  const baseUrl = "http://localhost:5000";
+  // const baseUrl = "http://localhost:5000";
 
   if (!loading) {
     //Calculate Price
@@ -68,7 +71,7 @@ const OrderScreen = ({ match, history }) => {
   }, []);
 
   const getPayment = async () => {
-    const res1 = await axios.get(`${baseUrl}/api/orders/payment`);
+    const res1 = await axios.get(`/api/orders/payment`);
     console.log(res1);
     if (res1.status === 200) {
       setValues(res1.data);
@@ -78,7 +81,7 @@ const OrderScreen = ({ match, history }) => {
   const paymentHandler = async () => {
     const paymentId = order._id;
     console.log(paymentId);
-    const res = await axios.get(`${baseUrl}/api/orders/payment/${paymentId}`);
+    const res = await axios.get(`/api/orders/payment/${paymentId}`);
     console.log(res);
 
     if (res.status !== 200) {
@@ -94,14 +97,14 @@ const OrderScreen = ({ match, history }) => {
       image: "https://i0.wp.com/banknotecoinstamp.com/bncs-content/uploads/2020/01/main-banner-razor-pay-650x510-1.jpg?w=650&ssl=1",
       // order_id: res.data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
       handler: function (response) {
-         alert(response.razorpay_payment_id);
-         alert(response.razorpay_order_id);
-        console.log(response)
-        alert(response.razorpay_signature);
-        setPaymentOrderId(response.razorpay_order_id);
+         alert('Payment successful');
+        //  alert(response.razorpay_order_id);
+        // console.log(response)
+        // alert(response.razorpay_signature);
+        // setPaymentOrderId(response.razorpay_order_id);
         setPaymentId(response.razorpay_payment_id);
-        setSignature(response.razorpay_signature);
-        setPayment(true);
+        // setSignature(response.razorpay_signature);
+        // setPayment(true);
       },
       prefill: {
         name: "",
@@ -121,24 +124,24 @@ const OrderScreen = ({ match, history }) => {
     rzp1.open();
 
     rzp1.on("payment.failed", function (response) {
-      alert(response.error.code);
-      alert(response.error.description);
-      alert(response.error.source);
-      alert(response.error.step);
-      alert(response.error.reason);
-      alert(response.error.metadata.order_id);
-      alert(response.error.metadata.payment_id);
+      // alert(response.error.code);
+      // alert(response.error.description);
+      // alert(response.error.source);
+      // alert(response.error.step);
+      // alert(response.error.reason);
+      // alert(response.error.metadata.order_id);
+      // alert(response.error.metadata.payment_id);
     });
   };
   
  
   useEffect(() => {
-     if(signature){
+     if(paymentId){
       successPaymentHandler()
 
     } 
 
-  },[signature])
+  },[paymentId])
 
   
  
@@ -161,9 +164,12 @@ const OrderScreen = ({ match, history }) => {
 
 
 
-  const successPaymentHandler = () => {
+  const successPaymentHandler = async () => {
     
     dispatch(payOrder(orderId));
+    dispatch(mailTo(orderId))
+
+    await axios.post('/api/orders/verification')
   };
 
   const deliverHandler = () => {
@@ -239,6 +245,8 @@ const OrderScreen = ({ match, history }) => {
                             {item.name}
                           </Link>
                         </Col>
+                        <br />
+                        <br/>
                         <Col md={4}>
                           {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
                         </Col>
@@ -264,18 +272,14 @@ const OrderScreen = ({ match, history }) => {
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
-                  <Col>Shipping</Col>
-                  <Col>₹{order.shippingPrice}</Col>
-                </Row>
-                <Row>
-                  <Col>Tax</Col>
-                  <Col>₹{order.taxPrice}</Col>
+                  <Col>Packing Charge</Col>
+                  <Col>2%</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Total</Col>
-                  <Col>₹{order.totalPrice}</Col>
+                  <Col>₹{order.totalPrice + order.totalPrice * 0.02}</Col>
                 </Row>
               </ListGroup.Item>
               {/* {!order.isPaid && (
@@ -315,8 +319,9 @@ const OrderScreen = ({ match, history }) => {
                     type="button"
                     className="btn btn-block"
                     onClick={ paymentHandler}
+                    disabled={order.isPaid}
                   >
-                    Proceed To Payment
+                    {order.isPaid ? 'Paid' : 'Proceed To Payment'}
                   </Button>
                 </ListGroup.Item> }
               

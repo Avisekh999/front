@@ -48,7 +48,7 @@ const PaymentScreen = ({ history }) => {
               id="Razorpay"
               name="paymentMethod"
               value="Debit / Credit card"
-              
+              checked={paymentMethod === "Debit / Credit card"}
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
             <Form.Check
@@ -57,6 +57,7 @@ const PaymentScreen = ({ history }) => {
               id="COD"
               name="payementMethod"
               value="COD"
+              checked={paymentMethod === "COD"}
              
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>

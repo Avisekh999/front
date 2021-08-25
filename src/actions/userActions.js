@@ -23,7 +23,9 @@ import {
     USER_LIST_RESET,
     USER_UPDATE_REQUEST,
     USER_UPDATE_SUCCESS,
-    USER_UPDATE_FAIL
+    USER_UPDATE_FAIL,
+    FORGOT_PASSWORD_SUCCESS,
+    RESET_PASSWORD_SUCCESS
 }
 from '../constants/userConstants'
 
@@ -79,7 +81,8 @@ export const logout = () => (dispatch) => {
     
 }
 
-export const register = (name, email, password) => async (dispatch) => {
+export const register = (name, email, number, password) => async (dispatch) => {
+    console.log("Number:", number);
     try {
         dispatch({
             type:USER_REGISTER_REQUEST
@@ -91,7 +94,8 @@ export const register = (name, email, password) => async (dispatch) => {
             }
         }
 
-        const{data} = await axios.post('/api/users', {name, email, password},config)
+        const{data} = await axios.post('/api/users', {name, email, number, password},config)
+        console.log(data);
 
         dispatch({
             type:USER_REGISTER_SUCCESS,
@@ -314,5 +318,31 @@ export const updateUser = (user) => async (dispatch, getState) => {
             payload: error.response && error.response.data.message ? error.response.data.message : error.message,
         })
         
+    }
+}
+
+export const forgotPassword = email => async (dispatch, getState) => {
+    try {
+        console.log("Emailll: ", email)
+        const config = { headers:{'Content-Type': 'application/json'} }
+        const {data} = await axios.post('/api/users/forgotpassword', { email }, config)
+        
+        dispatch({ type: FORGOT_PASSWORD_SUCCESS, payload: data })
+        
+    } catch(err) {
+
+    }
+}
+
+export const resetPassword = (password, id) => async (dispatch, getState) => {
+    try {
+        console.log("Password: ",password, "ID: ", id)
+        const config = { headers:{'Content-Type': 'application/json'} }
+        const {data} = await axios.put(`/api/users/resetpassword/${id}`, { password }, config)
+
+        dispatch({ type: RESET_PASSWORD_SUCCESS, payload: data }) 
+        
+    } catch(err) {
+
     }
 }

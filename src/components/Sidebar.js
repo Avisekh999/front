@@ -35,6 +35,7 @@ const sidebar = () => {
                 <Link
                   style={{ color: "black", textDecoration: "none" }}
                   to="/cart"
+                  uk-toggle="target: #offcanvas-flip"
                 >
                   <i class="fas fa-shopping-basket"></i> My Cart
                 </Link>
@@ -44,6 +45,7 @@ const sidebar = () => {
                 <Link
                   style={{ color: "black", textDecoration: "none" }}
                   to="/profile"
+                  uk-toggle="target: #offcanvas-flip"
                 >
                   <i class="fas fa-box"></i> My Orders
                 </Link>
@@ -53,12 +55,16 @@ const sidebar = () => {
                 <Link
                   style={{ color: "black", textDecoration: "none" }}
                   to="/profile"
+                  uk-toggle="target: #offcanvas-flip"
                 >
                   <i class="fas fa-user"></i> My Account
                 </Link>
               </li>
               <li>
-                <Link style={{ color: "black", textDecoration: "none" }} to="/offerscreen">
+                <Link 
+                  style={{ color: "black", textDecoration: "none" }} 
+                  to="/offerscreen"
+                  uk-toggle="target: #offcanvas-flip">
                   <i class="fas fa-tags"></i> Offer Zone
                 </Link>
               </li>
@@ -66,22 +72,25 @@ const sidebar = () => {
                 <Link
                   style={{ color: "black", textDecoration: "none" }}
                   to="/allcategory"
+                  uk-toggle="target: #offcanvas-flip"
                 >
                   <i class="fas fa-list-alt"></i> All Categories
                 </Link>
               </li>
               <li>
-                <a
+                <Link
                   style={{ color: "black", textDecoration: "none" }}
                   href="https://kundu-stores.flycricket.io/privacy.html"
+                  uk-toggle="target: #offcanvas-flip"
                 >
                   <i class="fas fa-key"></i> privacy policy
-                </a>
+                </Link>
               </li>
               <li>
                 <Link
                   style={{ color: "black", textDecoration: "none" }}
                   to="/contactus"
+                  uk-toggle="target: #offcanvas-flip"
                 >
                   <i class="fas fa-address-book"></i> Contact Us
                 </Link>
@@ -90,6 +99,8 @@ const sidebar = () => {
                 <a
                   style={{ color: "black", textDecoration: "none" }}
                   href="https://www.gmail.com"
+                  target="_blank"
+                  uk-toggle="target: #offcanvas-flip"
                 >
                   <i class="fas fa-envelope"></i> Mail Us
                 </a>
@@ -98,6 +109,8 @@ const sidebar = () => {
                 <a
                   style={{ color: "black", textDecoration: "none" }}
                   href="https://www.facebook.com"
+                  uk-toggle="target: #offcanvas-flip"
+                  target="_blank"
                 >
                   <i class="fab fa-facebook"></i>Follow us
                 </a>
@@ -106,6 +119,7 @@ const sidebar = () => {
                 <Link
                   style={{ color: "black", textDecoration: "none" }}
                   to=""
+                  uk-toggle="target: #offcanvas-flip"
                 >
                   <i class="fas fa-sign-out-alt"></i>Log Out
                 </Link>{" "}

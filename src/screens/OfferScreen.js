@@ -32,7 +32,8 @@ const HomeScreen = ({match}) => {
  
   return (
     <>
- 
+ <br />
+ <br />
         <Slide />              
         <br />
         <Offer />

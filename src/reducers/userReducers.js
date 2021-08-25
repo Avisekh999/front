@@ -23,7 +23,9 @@ import {
     USER_UPDATE_REQUEST,
     USER_UPDATE_SUCCESS,
     USER_UPDATE_FAIL,
-    USER_UPDATE_RESET
+    USER_UPDATE_RESET,
+    FORGOT_PASSWORD_SUCCESS,
+    RESET_PASSWORD_SUCCESS,
 }
 from '../constants/userConstants'
 
@@ -46,9 +48,10 @@ export const userLoginReducers = (state={ },action) =>{
 
 
 export const userRegisterReducers = (state={ },action) =>{
+    console.log("Numberrr: ", action.payload)
     switch(action.type){
         case USER_REGISTER_REQUEST:
-            return {loading: true}
+            return {...state, loading: true}
         case USER_REGISTER_SUCCESS:
             return {loading:false, userInfo: action.payload}
         case USER_REGISTER_FAIL:
@@ -138,12 +141,21 @@ export const userUpdateReducers = (state={ user:{} },action) =>{
         case USER_UPDATE_FAIL:
             return {loading: false, error: action.payload}
         case USER_UPDATE_RESET:
-                return {
-                    user: {}
-                }
-        
+            return {
+                user: {}
+            }    
+        case FORGOT_PASSWORD_SUCCESS:
+            return {
+                ...state,
+                msgSuccess: action.payload.success,
+                msg: action.payload.data
+            } 
+        case RESET_PASSWORD_SUCCESS:
+            return {
+                ...state,
+                resetMsgSuccess: action.payload.success
+            }  
         default:
             return state
-
     }
 }

@@ -115,10 +115,10 @@ const CartScreen = ({ match, location, history }) => {
                 .toFixed(2)}
               {(cartItems
                 .reduce((acc, item) => acc + item.qty * item.price, 0)
-                .toFixed(2)) < 500 ? <Message variant="danger">Minimum Eligible price ₹1000</Message> : (
+                .toFixed(2)) < 0 ? <Message variant="danger">Minimum Eligible price ₹500</Message> : (
                   <ListGroup.Item>
                   <ListGroup.Item>
-                  Estimate Delivery Date: <strong>{someFormattedDate}</strong>{" "}
+                  Estimate Delivery Date: <strong>Within 6 hours</strong>{" "}
                   </ListGroup.Item>
                   <ListGroup.Item>
                   Eligible Delivery Location:<strong> MATIGARA (734010)  , SHIVMANDIR (734011) , BAGDOGRA (734014),  MEDICAL (734013)</strong>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Navbar, Nav, Container, NavDropdown, Row, Col } from "react-bootstrap";
@@ -8,7 +8,7 @@ import SearchBox from "./SearchBox";
 import Sidebar from "../components/Sidebar";
 import kundu from "./logo.png";
 
-const Header = () => {
+const Header = ({ history }) => {
   const dispatch = useDispatch();
 
   const userLogin = useSelector((state) => state.userLogin);
@@ -19,6 +19,9 @@ const Header = () => {
 
   const logoutHandler = () => {
     dispatch(logout());
+
+    // Redirect to login page
+    window.location.replace("/login");
   };
 
   return (
@@ -65,7 +68,7 @@ const Header = () => {
                     <LinkContainer to="/profile">
                       <NavDropdown.Item>Profile</NavDropdown.Item>
                     </LinkContainer>
-                    <LinkContainer to="/profile">
+                    <LinkContainer to="/myorders">
                       <NavDropdown.Item>MyOrders</NavDropdown.Item>
                     </LinkContainer>
                     <NavDropdown.Item onClick={logoutHandler}>

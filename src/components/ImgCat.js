@@ -34,13 +34,13 @@ const ImgCat = () => {
     },
   };
   return (
-    <div style={{ marginTop: 20 }}>
+    <div style={{ margin: 40, }}>
       <Container>
         {/* <h1>Hello CodeSandbox</h1>
       <h2>Start editing to see some magic happen!</h2> */}
-        <div style={{ position: "relative", textAlign: "center"}}>
-          <Carousel responsive={responsive}>
-            <div>
+        <div style={{ position: "relative", textAlign: "center"}} className="carousel-container">
+          <Carousel responsive={responsive} className="categories-carousel">
+            <div className="categories-item">
               <LinkContainer  to="/category/dairyproducts/60d1826492207a1a70f84484">
               <Image
                 src={Dairy}
@@ -54,7 +54,7 @@ const ImgCat = () => {
               </LinkContainer>
             </div>
 
-            <div>
+            <div className="categories-item">
               <LinkContainer   to="/category/snacks/60d1836f92207a1a70f84485">
               <Image
                 src={Snacks}
@@ -67,7 +67,7 @@ const ImgCat = () => {
                 <Nav.Link>Snacks</Nav.Link>
               </LinkContainer>
             </div>
-            <div>
+            <div className="categories-item">
               <LinkContainer to="/category/masala/60d1838892207a1a70f84486">
               <Image
                 src={Masala}
@@ -81,7 +81,7 @@ const ImgCat = () => {
               </LinkContainer>
             </div>
 
-            <div>
+            <div className="categories-item">
               <LinkContainer  to="/category/drinks/60d1851792207a1a70f8448a" >
               <Image
                 src={Drink}
@@ -95,7 +95,7 @@ const ImgCat = () => {
                 <Nav.Link>Drinks</Nav.Link>
               </LinkContainer>
             </div>
-            <div>
+            <div className="categories-item">
               <LinkContainer  to="/category/cleaning/60d1853d92207a1a70f8448b">
               <Image
                 src={Clean}
@@ -105,10 +105,10 @@ const ImgCat = () => {
               </LinkContainer>
               
               <LinkContainer to="/category/cleaning/60d1853d92207a1a70f8448b">
-                <Nav.Link>Cleaning & Household</Nav.Link>
+                <Nav.Link>Household</Nav.Link>
               </LinkContainer>
             </div>
-            <div>
+            <div className="categories-item">
               <LinkContainer  to="/category/homeaccessories/60d1a75fc4d1483544474e79">
               <Image
                 src={Home}
@@ -119,11 +119,11 @@ const ImgCat = () => {
               </LinkContainer>
              
               <LinkContainer to="/category/homeaccessories/60d1a75fc4d1483544474e79">
-                <Nav.Link> Home Accessories</Nav.Link>
+                <Nav.Link> Appliances</Nav.Link>
               </LinkContainer>
             </div>
 
-            <div>
+            <div className="categories-item">
               <LinkContainer to="/category/food/60d184e192207a1a70f84489">
               <Image
                 src={Food}
@@ -133,11 +133,11 @@ const ImgCat = () => {
               </LinkContainer>
              
               <LinkContainer to="/category/food/60d184e192207a1a70f84489">
-                <Nav.Link> Food & Food Grains</Nav.Link>
+                <Nav.Link> Food</Nav.Link>
               </LinkContainer>
             </div>
 
-            <div>
+            <div className="categories-item">
               <LinkContainer  to="/category/womens/60d1844d92207a1a70f84487">
               <Image
                 src={Women}
@@ -148,11 +148,11 @@ const ImgCat = () => {
               </LinkContainer>
            
               <LinkContainer to="/category/womens/60d1844d92207a1a70f84487">
-                <Nav.Link>Women's Beauty Care & Hygiene </Nav.Link>
+                <Nav.Link>Women's Product </Nav.Link>
               </LinkContainer>
             </div>
 
-            <div>
+            <div className="categories-item">
               <LinkContainer to="/category/mens/60d1849192207a1a70f84488">
               <Image
                 src={Men}
@@ -162,7 +162,7 @@ const ImgCat = () => {
               </LinkContainer>
              
               <LinkContainer to="/category/mens/60d1849192207a1a70f84488">
-                <Nav.Link>Men's Grooming & Hygiene</Nav.Link>
+                <Nav.Link>Men's Product</Nav.Link>
               </LinkContainer>
             </div>
           </Carousel>

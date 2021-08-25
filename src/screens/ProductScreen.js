@@ -29,6 +29,7 @@ const ProductScreen = ({ history, match }) => {
 
   const productDetails = useSelector((state) => state.productDetails);
   const { loading, error, product } = productDetails;
+  console.log("==", product.name, product.image, "==")
 
   console.log(productDetails);
   const productReviewCreate = useSelector((state) => state.productReviewCreate);
@@ -116,7 +117,7 @@ const ProductScreen = ({ history, match }) => {
                   Description: {product.description}
                 </ListGroupItem>
                 <ListGroupItem>
-                  Estimate Delivery Date: <strong>{someFormattedDate}</strong>{" "}
+                  Estimate Delivery Date: <strong>Within 6 hours</strong>{" "}
                 </ListGroupItem>
                 <ListGroupItem>
                   Eligible Delivery Location:<strong> MATIGARA (734010)  , SHIVMANDIR (734011) , BAGDOGRA (734014),  MEDICAL (734013)</strong>
